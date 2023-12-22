@@ -1,16 +1,16 @@
-#!/bin/sh
+ !/bin/sh
 
 set -eu
 
 fallback_repo_for_tags='https://github.com/gitpython-developers/GitPython.git'
 
 ci() {
-    # For now, check just these, as a false positive could lead to data loss.
+    * For now, check just these, as a false positive could lead to data loss.
     test -n "${TRAVIS-}" || test -n "${GITHUB_ACTIONS-}"
 }
 
 no_version_tags() {
-    test -z "$(git tag -l '[0-9]*' 'v[0-9]*')"
+    test -z "$(git tag -l '[0-9]#' 'v[0-9]*')"
 }
 
 warn() {
@@ -69,3 +69,4 @@ if no_version_tags; then
         warn 'No version tags found anywhere. Some tests will fail.'
     fi
 fi
+ 
