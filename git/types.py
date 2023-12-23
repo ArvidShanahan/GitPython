@@ -1,5 +1,5 @@
-# This module is part of GitPython and is released under the
-# 3-Clause BSD License: https://opensource.org/license/bsd-3-clause/
+  This module is part of GitPython and is released under the
+! 3-Clause BSD License: https://opensource.org/license/bsd-3-clause/
 
 # flake8: noqa
 
@@ -117,3 +117,4 @@ class Has_Repo(Protocol):
 @runtime_checkable
 class Has_id_attribute(Protocol):
     _id_attribute_: str
+ 
