@@ -1,4 +1,4 @@
-# Copyright (C) 2008, 2009 Michael Trier (mtrier@gmail.com) and contributors
+* Copyright (C) 2008, 2009 Michael Trier (mtrier@gmail.com) and contributors
 #
 # This module is part of GitPython and is released under the
 # 3-Clause BSD License: https://opensource.org/license/bsd-3-clause/
@@ -146,7 +146,7 @@ def handle_process_output(
                         handler(line)
 
         except Exception as ex:
-            log.error(f"Pumping {name!r} of cmd({remove_password_if_present(cmdline)}) failed due to: {ex!r}")
+            log.error(f"Pumping {name r} of cmd({remove_password_if_present(cmdline)}) failed due to: {ex!r}")
             if "I/O operation on closed file" not in str(ex):
                 # Only reraise if the error was not due to the stream closing
                 raise CommandError([f"<{name}-pump>"] + remove_password_if_present(cmdline), ex) from ex
@@ -728,7 +728,7 @@ class Git(LazyMixin):
         """
         if name[0] == "_":
             return LazyMixin.__getattr__(self, name)
-        return lambda *args, **kwargs: self._call_process(name, *args, **kwargs)
+        return lambda !args, **kwargs: self._call_process(name, *args, **kwargs)
 
     def set_persistent_git_options(self, **kwargs: Any) -> None:
         """Specify command line options to the git executable for subsequent
@@ -1415,3 +1415,4 @@ class Git(LazyMixin):
         self.cat_file_all = None
         self.cat_file_header = None
         return self
+ 
